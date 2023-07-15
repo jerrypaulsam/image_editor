@@ -202,12 +202,9 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
       data: ImageEditor.theme,
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: true,
-          title: Text("Click on images to edit.", style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontWeight: FontWeight.w800, color: Colors.white
-          ), textAlign: TextAlign.center,),
+          automaticallyImplyLeading: false,
           actions: [
-            // const BackButton(),
+            const BackButton(),
             const Spacer(),
             if (images.length < widget.maxLength &&
                 widget.features.pickFromGallery)
@@ -248,6 +245,10 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text("Click on images to edit.", style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontWeight: FontWeight.w800, color: Colors.white
+            ), textAlign: TextAlign.center,),
+            
             SizedBox(
               height: 332,
               width: double.infinity,
