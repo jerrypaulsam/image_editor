@@ -388,7 +388,7 @@ class SingleImageEditor extends StatefulWidget {
       filters: true,
       flip: true,
       rotate: true,
-      text: true,
+      text: false,
     ),
     this.cropAvailableRatios = const [
       AspectRatioOption(title: 'Freeform'),
