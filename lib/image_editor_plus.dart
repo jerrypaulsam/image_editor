@@ -202,12 +202,12 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
       data: ImageEditor.theme,
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
           title: Text("Click on images to edit.", style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-            fontWeight: FontWeight.w800, color: Colors.white
+              fontWeight: FontWeight.w800, color: Colors.white
           ), textAlign: TextAlign.center,),
           actions: [
-            const BackButton(),
+            // const BackButton(),
             const Spacer(),
             if (images.length < widget.maxLength &&
                 widget.features.pickFromGallery)
