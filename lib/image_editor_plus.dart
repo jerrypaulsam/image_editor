@@ -245,7 +245,7 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("Click on images to edit.", style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            Text("Click on images to edit.", style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontWeight: FontWeight.w800, color: Colors.white
             ), textAlign: TextAlign.center,),
 
