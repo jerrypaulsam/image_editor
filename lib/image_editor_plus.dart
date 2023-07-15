@@ -159,12 +159,12 @@ class MultiImageEditor extends StatefulWidget {
     this.allowMultiple = false,
     this.maxLength = 99,
     this.features = const ImageEditorFeatures(
-      pickFromGallery: true,
-      captureFromCamera: true,
+      pickFromGallery: false,
+      captureFromCamera: false,
       crop: true,
       blur: true,
       brush: true,
-      emoji: true,
+      emoji: false,
       filters: true,
       flip: true,
       rotate: true,
@@ -174,8 +174,8 @@ class MultiImageEditor extends StatefulWidget {
       AspectRatioOption(title: 'Freeform'),
       AspectRatioOption(title: '1:1', ratio: 1),
       AspectRatioOption(title: '4:3', ratio: 4 / 3),
-      AspectRatioOption(title: '5:4', ratio: 5 / 4),
-      AspectRatioOption(title: '7:5', ratio: 7 / 5),
+      // AspectRatioOption(title: '5:4', ratio: 5 / 4),
+      // AspectRatioOption(title: '7:5', ratio: 7 / 5),
       AspectRatioOption(title: '16:9', ratio: 16 / 9),
     ],
   });
@@ -235,8 +235,8 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
               ),
             IconButton(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              icon: const Icon(Icons.check),
-              onPressed: () async {
+              icon: const Icon(Icons.done_outline_rounded),
+              onPressed: () {
                 Navigator.pop(context, images);
               },
             ),
@@ -273,19 +273,19 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
                           child: Container(
                             margin: const EdgeInsets.only(
                                 top: 32, right: 32, bottom: 32),
-                            width: 200,
+                            width: 300,
                             height: 300,
                             decoration: BoxDecoration(
                               color: Colors.transparent,
-                              border:
-                                  Border.all(color: Colors.white.withAlpha(80)),
-                              borderRadius: BorderRadius.circular(8),
+                              // border:
+                              //     Border.all(color: Colors.white.withAlpha(80)),
+                              borderRadius: BorderRadius.circular(12),
                             ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(4),
                               child: Image.memory(
                                 image.image,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),
@@ -378,12 +378,12 @@ class SingleImageEditor extends StatefulWidget {
     @Deprecated('Use features instead') this.allowCamera = false,
     @Deprecated('Use features instead') this.allowGallery = false,
     this.features = const ImageEditorFeatures(
-      pickFromGallery: true,
-      captureFromCamera: true,
+      pickFromGallery: false,
+      captureFromCamera: false,
       crop: true,
       blur: true,
       brush: true,
-      emoji: true,
+      emoji: false,
       filters: true,
       flip: true,
       rotate: true,
@@ -393,8 +393,8 @@ class SingleImageEditor extends StatefulWidget {
       AspectRatioOption(title: 'Freeform'),
       AspectRatioOption(title: '1:1', ratio: 1),
       AspectRatioOption(title: '4:3', ratio: 4 / 3),
-      AspectRatioOption(title: '5:4', ratio: 5 / 4),
-      AspectRatioOption(title: '7:5', ratio: 7 / 5),
+      // AspectRatioOption(title: '5:4', ratio: 5 / 4),
+      // AspectRatioOption(title: '7:5', ratio: 7 / 5),
       AspectRatioOption(title: '16:9', ratio: 16 / 9),
     ],
   });
@@ -813,7 +813,7 @@ class _SingleImageEditorState extends State<SingleImageEditor> {
                   if (widget.features.rotate)
                     BottomButton(
                       icon: Icons.rotate_left,
-                      text: i18n('Rotate left'),
+                      text: i18n('Left'),
                       onTap: () {
                         var t = currentImage.width;
                         currentImage.width = currentImage.height;
@@ -826,7 +826,7 @@ class _SingleImageEditorState extends State<SingleImageEditor> {
                   if (widget.features.rotate)
                     BottomButton(
                       icon: Icons.rotate_right,
-                      text: i18n('Rotate right'),
+                      text: i18n('Right'),
                       onTap: () {
                         var t = currentImage.width;
                         currentImage.width = currentImage.height;
