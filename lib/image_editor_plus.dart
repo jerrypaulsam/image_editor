@@ -243,6 +243,7 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
           ],
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               height: 332,
@@ -285,7 +286,7 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
                               borderRadius: BorderRadius.circular(4),
                               child: Image.memory(
                                 image.image,
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
@@ -343,7 +344,7 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
                                   image.load(editedImage);
                                 }
                               },
-                              icon: const Icon(Icons.photo_filter_sharp),
+                              icon: const Icon(Icons.photo_filter_rounded),
                             ),
                           ),
                         ),
