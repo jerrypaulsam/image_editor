@@ -204,7 +204,7 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text("Click on images to edit.", style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-            fontWeight: FontWeight.w800
+            fontWeight: FontWeight.w800, color: Colors.white
           ), textAlign: TextAlign.center,),
           actions: [
             const BackButton(),
