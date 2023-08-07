@@ -346,6 +346,9 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
 
                                 if (editedImage != null) {
                                   image.load(editedImage);
+                                  setState(() {
+
+                                  });
                                 }
                               },
                               icon: const Icon(Icons.photo_filter_rounded),
