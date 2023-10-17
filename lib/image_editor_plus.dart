@@ -202,37 +202,37 @@ class _MultiImageEditorState extends State<MultiImageEditor> {
       data: ImageEditor.theme,
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
           actions: [
-            const BackButton(),
-            const Spacer(),
-            if (images.length < widget.maxLength &&
-                widget.features.pickFromGallery)
-              IconButton(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                icon: const Icon(Icons.photo),
-                onPressed: () async {
-                  var selected = await picker.pickMultiImage();
+            // const BackButton(),
+            // const Spacer(),
+            // if (images.length < widget.maxLength &&
+            //     widget.features.pickFromGallery)
+            //   IconButton(
+            //     padding: const EdgeInsets.symmetric(horizontal: 8),
+            //     icon: const Icon(Icons.photo),
+            //     onPressed: () async {
+            //       var selected = await picker.pickMultiImage();
 
-                  images.addAll(selected.map((e) => ImageItem(e)).toList());
-                  setState(() {});
-                },
-              ),
-            if (images.length < widget.maxLength &&
-                widget.features.captureFromCamera)
-              IconButton(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                icon: const Icon(Icons.camera_alt),
-                onPressed: () async {
-                  var selected =
-                      await picker.pickImage(source: ImageSource.camera);
+            //       images.addAll(selected.map((e) => ImageItem(e)).toList());
+            //       setState(() {});
+            //     },
+            //   ),
+            // if (images.length < widget.maxLength &&
+            //     widget.features.captureFromCamera)
+            //   IconButton(
+            //     padding: const EdgeInsets.symmetric(horizontal: 8),
+            //     icon: const Icon(Icons.camera_alt),
+            //     onPressed: () async {
+            //       var selected =
+            //           await picker.pickImage(source: ImageSource.camera);
 
-                  if (selected == null) return;
+            //       if (selected == null) return;
 
-                  images.add(ImageItem(selected));
-                  setState(() {});
-                },
-              ),
+            //       images.add(ImageItem(selected));
+            //       setState(() {});
+            //     },
+            //   ),
             IconButton(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               icon: const Icon(Icons.done_outline_rounded),
