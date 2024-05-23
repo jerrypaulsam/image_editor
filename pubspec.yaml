@@ -24,6 +24,7 @@ dependencies:
   reorderables: ^0.6.0
   permission_handler: ^11.1.0
   flex_color_picker: ^3.5.0
+  image_editor: ^1.5.1
 
 dev_dependencies:
   flutter_test:
